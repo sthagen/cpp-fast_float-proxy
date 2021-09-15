@@ -40,7 +40,7 @@ TEST_SUITE ("Example derived tests.") {
             double lat, lon;
             auto outcome = fast_float::from_chars(a_lat.data(), a_lat.data()+a_lat.size(), lat, fast_float::chars_format::fixed);
             CHECK(outcome.ec == std::errc());
-            outcome = fast_float::from_chars(a_lon.data(), a_lon.data()+a_long.size(), lon, fast_float::chars_format::fixed);
+            outcome = fast_float::from_chars(a_lon.data(), a_lon.data()+a_lon.size(), lon, fast_float::chars_format::fixed);
             CHECK(outcome.ec == std::errc());
             CHECK(lat == 42.1234);
             REQUIRE(lon == 179.21345678);
