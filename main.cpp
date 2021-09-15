@@ -32,7 +32,7 @@ TEST_SUITE ("Example derived tests.") {
             const std::string input =  "3.1416 xyz ";
             double result;
             auto answer = fast_float::from_chars(input.data(), input.data()+input.size(), result);
-            CHECK(answer.ec == std::errc())
+            CHECK(answer.ec == std::errc());
             REQUIRE(result == 3.1416);
         }
         SUBCASE("The parsing of latitude and longitude strings is correct.") {
