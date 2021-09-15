@@ -43,7 +43,7 @@ TEST_SUITE ("Example derived tests.") {
             outcome = fast_float::from_chars(a_lon.data(), a_lon.data()+a_lon.size(), lon, fast_float::chars_format::fixed);
             CHECK(outcome.ec == std::errc());
             CHECK(lat == 42.1234);
-            REQUIRE(lon == 179.21345678);
+            REQUIRE(lon == doctest::Approx(179.21345678).epsilon(0.0001));
         }
     }
 }
