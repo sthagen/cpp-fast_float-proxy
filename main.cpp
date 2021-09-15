@@ -39,9 +39,9 @@ TEST_SUITE ("Example derived tests.") {
             const std::string a_lat =  "42.1234", a_lon =  "179.12345678";
             double lat, lon;
             auto outcome = fast_float::from_chars(a_lat.data(), a_lat.data()+input.size(), lat, fast_float::chars_format::fixed);
-            CHECK(outcome.ec == std::errc())
+            CHECK(outcome.ec == std::errc());
             outcome = fast_float::from_chars(a_lon.data(), a_lon.data()+input.size(), lon, fast_float::chars_format::fixed);
-            CHECK(outcome.ec == std::errc())
+            CHECK(outcome.ec == std::errc());
             CHECK(lat == 42.1234);
             REQUIRE(lon == 179.21345678);
         }
